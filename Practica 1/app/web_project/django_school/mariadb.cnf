@@ -1,0 +1,7 @@
+[client]
+host = [rellenar]
+port = [rellenar]
+database = [rellenar]
+user = root
+password = [rellenar]
+default-character-set = utf8
