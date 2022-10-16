@@ -1,7 +1,7 @@
 [client]
-host = [rellenar]
-port = [rellenar]
-database = [rellenar]
+host = 127.0.0.1
+port = 3306
+database = uca_quiz
 user = root
-password = [rellenar]
+password = root
 default-character-set = utf8
