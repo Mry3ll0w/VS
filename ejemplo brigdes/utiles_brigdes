@@ -1,0 +1,6 @@
+docker network create --driver bridge [nombre net] //Crear read
+
+//Para vincular el network a los container https://docs.docker.com/network/network-tutorial-standalone/
+docker run -dit --name [nombre nuevo container] --network [nombre red] [imagen]
+
+dig +short [nombre container] | tail -n1 //Para sacar las ip del container
