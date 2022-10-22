@@ -27,7 +27,7 @@ SECRET_KEY = 'd$pxg6fisc4iwzk&vz^s_d0lkf&k63l5a8f!obktw!jg#4zvp3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0',]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -86,12 +86,21 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     # }
+    #'default': {
+    #    'ENGINE': 'django.db.backends.mysql',
+    #    'OPTIONS': {
+    #        'read_default_file': 'django_school/mariadb.cnf',
+    #    },
+    #}
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {
-            'read_default_file': 'django_school/mariadb.cnf',
-        },
+        'NAME': 'uca_quiz',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'db_c',#db_c se corresponde al nombre del contenedor de la base de datos
+        'PORT': '3306',
     }
+    
 }
 
 
