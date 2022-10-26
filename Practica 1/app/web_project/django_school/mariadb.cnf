@@ -1,5 +1,5 @@
 [client]
-host = 172.19.0.2
+host = django_database
 port = 3306
 database = uca_quiz
 user = root

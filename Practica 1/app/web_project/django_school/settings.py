@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from wsgiref.simple_server import WSGIRequestHandler
 
 from django.contrib.messages import constants as messages
 
@@ -82,27 +83,28 @@ WSGI_APPLICATION = 'django_school.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
-    #'default': {
-    #    'ENGINE': 'django.db.backends.mysql',
-    #    'OPTIONS': {
-    #        'read_default_file': 'django_school/mariadb.cnf',
-    #    },
-    #}
+     #'default': {
+     #    'ENGINE': 'django.db.backends.sqlite3',
+     #    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+     #}
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'uca_quiz',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'db_c',#db_c se corresponde al nombre del contenedor de la base de datos
-        'PORT': '3306',
+        'OPTIONS': {
+            'read_default_file': 'django_school/mariadb.cnf',
+        },
     }
-    
 }
 
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'uca_quiz',
+#        'USER': 'root',
+#        'PASSWORD': 'root',
+#        'HOST': 'django_database',
+#        'PORT': '3306',
+#    }
+#}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
