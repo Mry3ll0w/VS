@@ -1,1 +1,21 @@
-Xd
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-deployment
+  labels:
+    app: django-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: django-app
+  template:
+    metadata:
+      labels:
+        app: django-app
+    spec:
+      containers:
+      - name: django-app
+        image: vsp2202223/p2
+        ports:
+        - containerPort: 8800
