@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  database:
+    image: "mysql:latest"
+    container_name: "mysqlc"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
