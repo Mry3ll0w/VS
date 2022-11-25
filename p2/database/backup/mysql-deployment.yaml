@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: mysql-app
-        image: vsp2202223/mariadb
+        image: vsp2202223/mysql
         ports:
         - containerPort: 3306
         volumeMounts:
