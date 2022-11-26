@@ -19,3 +19,6 @@ spec:
         image: vsp2202223/p2
         ports:
         - containerPort: 8800
+        env:
+          - name: MARIADB_HOST
+            value: $(DJANGO_SCHOOL_DB_SERVICE_HOST)

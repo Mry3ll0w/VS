@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+from wsgiref.simple_server import WSGIRequestHandler
 
 from django.contrib.messages import constants as messages
 
@@ -81,13 +82,17 @@ WSGI_APPLICATION = 'django_school.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'uca_quiz',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': os.environ.get('MARIADB_HOST'),
+        'PORT': '3306',
     }
 }
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/

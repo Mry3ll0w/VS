@@ -1,0 +1,7 @@
+[client]
+host = django_database
+port = 3306
+database = uca_quiz
+user = root
+password = root
+default-character-set = utf8
